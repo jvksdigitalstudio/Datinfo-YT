@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import com.youtubedata.app.data.model.SocialLink
 import com.youtubedata.app.databinding.ItemSocialBinding
 
@@ -24,7 +25,7 @@ class SocialsAdapter(
                 val color = Color.parseColor(link.colorHex)
                 binding.tvIcon.setTextColor(color)
                 binding.tvName.setTextColor(color)
-                binding.cardSocial.strokeColor = color
+                (binding.cardSocial as? MaterialCardView)?.strokeColor = color
             } catch (_: Exception) {}
 
             binding.root.setOnClickListener { onClick(link) }

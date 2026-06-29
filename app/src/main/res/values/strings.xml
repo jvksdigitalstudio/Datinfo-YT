@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YouTube Data</string>
+    <string name="search_hint">@MrBeast · youtube.com/@canal · UCxxxxxx</string>
+    <string name="analyze_btn">Analizar →</string>
+    <string name="empty_title">Ingresa un canal para comenzar</string>
+    <string name="empty_subtitle">Soporta URLs, @usuarios e IDs de canal de YouTube</string>
+    <string name="footer_text">YouTube Data · Datos reales vía YouTube Data API v3 · Solo información pública</string>
+    <string name="loading">Analizando canal…</string>
+    <string name="error_no_key">Configura tu API Key primero</string>
+    <string name="btn_demo">▶  Demo</string>
+    <string name="subscribers">Suscriptores</string>
+    <string name="videos">Videos</string>
+    <string name="total_views">Vistas totales</string>
+    <string name="share_via">Compartir canal</string>
+    <string name="copied">copiado</string>
+    <string name="open_youtube">Abrir en YouTube</string>
+</resources>

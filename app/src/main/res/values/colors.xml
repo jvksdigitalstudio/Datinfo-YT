@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backgrounds -->
+    <color name="bg_primary">#0f0f0f</color>
+    <color name="bg_header">#111111</color>
+    <color name="bg_card">#1a1a1a</color>
+    <color name="bg_item">#1f1f1f</color>
+    <color name="bg_input">#222222</color>
+
+    <!-- Text -->
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#a0a0a0</color>
+    <color name="text_hint">#555555</color>
+
+    <!-- Accent -->
+    <color name="red_primary">#ff0000</color>
+    <color name="red_dark">#cc0000</color>
+    <color name="accent_green">#22d98b</color>
+    <color name="accent_blue">#3b82f6</color>
+
+    <!-- Borders & chips -->
+    <color name="border">#2a2a2a</color>
+    <color name="chip_bg">#1e1e1e</color>
+
+    <!-- Skeleton loading -->
+    <color name="skeleton_bg">#222222</color>
+    <color name="skeleton_shine">#2a2a2a</color>
+
+    <!-- Error -->
+    <color name="error_bg">#2a1515</color>
+    <color name="error_text">#ff6b6b</color>
+
+    <!-- System -->
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+</resources>

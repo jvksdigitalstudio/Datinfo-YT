@@ -4,12 +4,10 @@
     android:layout_height="match_parent"
     android:background="#000000">
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/imgFull"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
         android:contentDescription="Imagen completa" />
 
     <!-- Botón cerrar -->
@@ -36,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="24dp"
-        android:text="Toca para cerrar"
+        android:text="Pellizca para zoom · X para cerrar"
         android:textColor="#88ffffff"
         android:textSize="12sp" />
 

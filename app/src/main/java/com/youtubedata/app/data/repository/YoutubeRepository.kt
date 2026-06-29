@@ -146,11 +146,14 @@ class YoutubeRepository {
                          else "https://www.youtube.com/channel/$channelId"
 
         val avatar = sn.thumbnails?.let {
-            it.maxres?.url ?: it.high?.url ?: it.medium?.url ?: it.default?.url ?: ""
+            val base = it.maxres?.url ?: it.high?.url ?: it.medium?.url ?: it.default?.url ?: ""
+            // Force max resolution for Google/YouTube avatar URLs
+            if (base.contains("=s")) base.replace(Regex("=s\\d+-c"), "=s800-c")
+            else base
         } ?: ""
 
         val banner = (br.image?.bannerExternalUrl ?: "").let {
-            if (it.isNotEmpty()) "$it=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" else ""
+            if (it.isNotEmpty()) "$it=w2560-nd-rj" else ""
         }
 
         val countryCode = sn.country

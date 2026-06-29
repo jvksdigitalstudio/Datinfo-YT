@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="YouTube Data"
+                    android:text="Datinfo YT"
                     android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -326,7 +326,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="YouTube Data · Datos reales vía YouTube Data API v3 · Solo información pública"
+                android:text="Datinfo YT · Datos reales vía Datinfo YT API v3 · Solo información pública"
                 android:textColor="@color/text_hint"
                 android:textSize="11sp"
                 android:gravity="center"

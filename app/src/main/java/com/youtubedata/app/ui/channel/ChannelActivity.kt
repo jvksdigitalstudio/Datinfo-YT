@@ -17,6 +17,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.youtubedata.app.R
 import com.youtubedata.app.data.model.ChannelData
 import com.youtubedata.app.databinding.ActivityChannelBinding
+import com.youtubedata.app.ui.ImageViewerActivity
 import com.youtubedata.app.utils.ExportUtils
 import com.youtubedata.app.utils.FormatUtils
 
@@ -55,19 +56,27 @@ class ChannelActivity : AppCompatActivity() {
     }
 
     private fun renderChannel() {
+        // Banner
         if (channel.bannerUrl.isNotBlank()) {
             Glide.with(this).load(channel.bannerUrl)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.imgBanner)
+            // Click en banner → pantalla completa
+            binding.imgBanner.setOnClickListener { openImage(channel.bannerUrl) }
         } else {
             binding.imgBanner.setBackgroundColor(Color.parseColor("#1a1a1a"))
         }
 
+        // Avatar
         Glide.with(this).load(channel.avatarUrl)
             .placeholder(R.drawable.ic_avatar_placeholder)
             .circleCrop()
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(binding.imgAvatar)
+        // Click en avatar → pantalla completa
+        if (channel.avatarUrl.isNotBlank()) {
+            binding.imgAvatar.setOnClickListener { openImage(channel.avatarUrl) }
+        }
 
         binding.tvChannelName.text = channel.name
         binding.tvHandle.text      = channel.handle.ifBlank { channel.url }
@@ -98,8 +107,8 @@ class ChannelActivity : AppCompatActivity() {
         val subsFull = if (channel.hiddenSubscribers) ""
                        else FormatUtils.formatFull(channel.subscribersRaw)
 
-        binding.tvSubsDisplay.text     = subsText
-        binding.tvSubsFullDisplay.text = subsFull
+        binding.tvSubsDisplay.text       = subsText
+        binding.tvSubsFullDisplay.text   = subsFull
         binding.tvVideosDisplay.text     = FormatUtils.formatNumber(channel.videosRaw)
         binding.tvVideosFullDisplay.text = FormatUtils.formatFull(channel.videosRaw)
         binding.tvViewsDisplay.text      = FormatUtils.formatNumber(channel.totalViewsRaw)
@@ -183,13 +192,20 @@ class ChannelActivity : AppCompatActivity() {
                 appendLine("👁 ${FormatUtils.formatNumber(channel.totalViewsRaw)} vistas")
                 appendLine("🌍 ${channel.countryFlag} ${channel.country}")
                 appendLine("🔗 ${channel.url}")
-                append("\nAnalizado con YouTube Data App")
+                append("\nAnalizado con Datinfo YT")
             }
             startActivity(Intent.createChooser(
                 Intent(Intent.ACTION_SEND).apply { type = "text/plain"; putExtra(Intent.EXTRA_TEXT, text) },
                 "Compartir canal"
             ))
         }
+    }
+
+    private fun openImage(url: String) {
+        val intent = Intent(this, ImageViewerActivity::class.java).apply {
+            putExtra(ImageViewerActivity.EXTRA_URL, url)
+        }
+        startActivity(intent)
     }
 
     private fun copyToClipboard(label: String, text: String) {

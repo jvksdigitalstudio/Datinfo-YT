@@ -11,24 +11,28 @@
     app:cardElevation="0dp"
     app:strokeWidth="1dp"
     app:strokeColor="@color/border">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="12dp">
+
         <TextView
             android:id="@+id/tvIcon"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:gravity="center"
             android:textSize="20sp" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_marginStart="10dp">
+
             <TextView
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
@@ -36,6 +40,7 @@
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_primary" />
+
             <TextView
                 android:id="@+id/tvHandle"
                 android:layout_width="wrap_content"
@@ -44,6 +49,9 @@
                 android:textColor="@color/text_secondary"
                 android:maxLines="1"
                 android:ellipsize="end" />
+
         </LinearLayout>
+
     </LinearLayout>
+
 </com.google.android.material.card.MaterialCardView>

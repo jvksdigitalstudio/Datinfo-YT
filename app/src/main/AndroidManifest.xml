@@ -14,7 +14,6 @@
         android:theme="@style/Theme.YouTubeData"
         android:hardwareAccelerated="true">
 
-        <!-- Splash -->
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
@@ -26,18 +25,32 @@
             </intent-filter>
         </activity>
 
-        <!-- Main -->
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenSize|keyboardHidden" />
 
-        <!-- Channel Detail -->
         <activity
             android:name=".ui.channel.ChannelActivity"
             android:exported="false"
             android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Visor de imagen pantalla completa -->
+        <activity
+            android:name=".ui.ImageViewerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YouTubeData" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 
